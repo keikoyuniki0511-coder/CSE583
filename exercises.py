@@ -6,7 +6,6 @@ def every_other_element(arr):
     Hint: This can be done in a one-liner using a list comprehension but you're welcome to use a for-loop, too
     """
     return arr[1::2]
-    raise NotImplementedError()
 
 
 def is_palindrome(in_str):
@@ -20,7 +19,6 @@ def is_palindrome(in_str):
         - does your solution work with strings and lists?
     """
     return in_str == in_str[::-1]
-    raise NotImplementedError()
 
 
 def fizzbuzz(n):
@@ -34,15 +32,18 @@ def fizzbuzz(n):
          answer[i] == i (as a string) if none of the above conditions are true.
 
     """
-    if n % 3 == 0 and n % 5 == 0:
-        return ["FizzBuzz"]
-    elif n % 3 == 0:
-        return ["Fizz"]
-    elif n % 5 == 0:
-        return ["Buzz"]
-    else:
-        return [str(i) for i in range(1, n + 1)]
-    raise NotImplementedError()
+    answer = []
+    for i in range(1, n + 1):
+        if i % 15 == 0:
+            answer.append("FizzBuzz")
+        elif i % 3 == 0:
+            answer.append("Fizz")
+        elif i % 5 == 0:
+            answer.append("Buzz")
+        else:
+            answer.append(str(i))
+
+    return answer
 
 
 def happy_numbers(n):
@@ -61,13 +62,19 @@ def happy_numbers(n):
     Task:
         Return true if n is a happy number, and false if not.
     """
-    total = 0
+    
+    seen = set()
 
-    for digit in str(n):
-        total += int(digit) ** 2
+    while n != 1 and n not in seen:
+        seen.add(n)
+        total = 0
 
-    print(total)
-    raise NotImplementedError()
+        for digit in str(n):
+            total += int(digit) ** 2
+
+        n = total
+
+    return n == 1
 
 
 def nth_fibonacci_number(n):
@@ -84,7 +91,14 @@ def nth_fibonacci_number(n):
 
         You may assume that the input number is greater-than-or-equal-to 0
     """
-    raise NotImplementedError()
+    
+    if n <= 0:
+        return 0
+    elif n == 1 or n == 2:
+        return 1
+    else:
+        return nth_fibonacci_number(n - 1) + nth_fibonacci_number(n - 2)
+
 
 
 def safe_divide(numerator, denominator):
@@ -103,7 +117,10 @@ def safe_divide(numerator, denominator):
 
         For this task, do not check if the denominator is zero. Instead, catch the exception and return a tuple of the numerator, denominator, and a string describing what happened. If the division is successful, return the quotient
     """
-    raise NotImplementedError()
+    try:
+        return numerator / denominator
+    except ZeroDivisionError:
+        return (numerator, denominator, "Denominator cannot be zero")
 
 
 def count_frequencies(in_str, ignore_case=False):
@@ -116,10 +133,18 @@ def count_frequencies(in_str, ignore_case=False):
 
     Hint:
         You might find the "split" and "lower" functions useful here
-
-
     """
-    raise NotImplementedError()
+    words = in_str.split()
+    if ignore_case:
+        words = [word.lower() for word in words]
+
+    counts = {}
+    for word in words:
+        if word in counts:
+            counts[word] += 1
+        else:
+            counts[word] = 1
+    return counts
 
 
 #####################################
