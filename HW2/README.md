@@ -12,3 +12,11 @@ level intro 3:
   $ git switch main
   $ git commit
   $ git merge bugFix
+level intro 4:
+  $ git branch bugFix
+  $ git switch bugFix
+  $ git commit
+  $ git checkout main
+  $ git commit
+  $ git checkout bugFix
+  $ git rebase main
