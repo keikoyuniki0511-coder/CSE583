@@ -22,3 +22,28 @@ git branch bugFix && git switch bugFix && git commit && git switch main && git c
 ```bash
 git branch bugFix && git switch bugFix && git commit && git checkout main && git commit && git checkout bugFix && git rebase main
 ```
+
+## Ramping up
+### Level 1
+```bash
+git switch --detach bugFix
+```
+
+### Level 2
+```bash
+git switch --detach HEAD^
+```
+
+### Level 3
+```bash
+git branch -f bugFix C0
+git branch -f main C6
+git switch --detach HEAD^
+```
+
+### Level 4
+```bash
+git reset HEAD^
+git checkout pushed
+git revert pushed
+```
