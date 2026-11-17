@@ -47,3 +47,43 @@ git reset HEAD^
 git checkout pushed
 git revert pushed
 ```
+## Push & Pull -- Git Remotes!
+
+### Level 1
+```bash
+git clone
+```
+### Level 2
+```bash
+git commit && git switch --detach main && git commit
+```
+
+### Level 3
+```bash
+git fetch
+```
+
+### Level 4
+```bash
+git fetch && git pull
+```
+
+### Level 5
+```bash
+git clone && git fakeTeamwork 2 && git commit && git pull
+```
+
+### Level 6
+```bash
+git commit && git commit && git push
+```
+
+### Level 7
+```bash
+git clone && git fakeTeamwork && git commit && git pull --rebase && git push
+```
+
+### Level 8
+```bash
+git branch -f main o/main && git switch -c feature C2 && git push origin feature
+```
