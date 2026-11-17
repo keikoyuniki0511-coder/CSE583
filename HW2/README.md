@@ -1,4 +1,7 @@
-# Introduction
+## My process
+### Used `mkdir HW2` and `touch HW2/README.md` to create a new directory and a README.md file in the repository. Recorded the entire gameplay process in README.md and saved screenshots in the HW2 directory after completing each sequence. Finally, used `git add`, `git commit`, and `git push` to upload the HW2 directory to the repository.
+
+## Introduction
 
 ### Level intro 1
 ```bash
